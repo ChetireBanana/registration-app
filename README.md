@@ -47,9 +47,13 @@ git clone https://github.com/ChetireBanana/registration-app.git
 
 ## Скриншоты
 
-| Главный экран                 | Неверный email                  | Регистрация успешна                       |
-| ----------------------------- | ------------------------------- | ----------------------------------------- |
-| ![](./images/main_screen.png) | ![](./images/email_invalid.png) | ![](./images/registration_successful.png) |
+<h3>Галерея скриншотов</h3>
+
+<p float="left">
+  <img src="./images/main_screen.png" width="300" />
+  <img src="./images/email_invalid.png" width="300" />
+  <img src="./images/registration_succesful.png" width="300" />
+</p>
 
 ## Лицензия
 
