@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">RegistrationApp</string>
+    <string name="focus_logo_description">Focus logo</string>
+    <string name="back_button_description">Back button</string>
+    <string name="registration_title">Регистрация</string>
+    <string name="enter_email_hint">Введите Email</string>
+    <string name="enter_username_hint">Введите имя пользователя</string>
+    <string name="enter_password_hint">Придумайте пароль</string>
+    <string name="confirm_password_hint">Повторите пароль</string>
+    <string name="enter_account_button">Есть Аккаунт</string>
+    <string name="create_account_button">Сохранить</string>
+    <string name="password_not_confirmed">Пароли не совпадают</string>
+    <string name="username_not_unique">Имя пользователя занято</string>
+    <string name="email_not_unique">Этот Email уже занят</string>
+    <string name="enter_accaunt_button_clicked_toast">Enter Accaunt Button Clicked</string>
+    <string name="back_button_clicked_toast">Back Button Clicked</string>
+    <string name="username_too_short">Слишком короткое имя</string>
+    <string name="username_too_long">Слишком длинное имя</string>
+    <string name="password_too_short">Слишком короткий пароль</string>
+    <string name="password_too_long">Слишком длинный пароль</string>
+    <string name="email_too_long">Слишком длинный email</string>
+    <string name="email_invalid">Неверный email</string>
+</resources>
