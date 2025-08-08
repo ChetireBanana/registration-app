@@ -85,7 +85,8 @@
                 android:id="@+id/username_error_text_view"
                 style="@style/ErrorTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/error_field_height"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/error_min_field_height"
                 tools:text="ошибка" />
 
         </LinearLayout>
@@ -109,7 +110,8 @@
                 android:id="@+id/email_error_text_view"
                 style="@style/ErrorTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/error_field_height"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/error_min_field_height"
                 tools:text="ошибка" />
 
         </LinearLayout>
@@ -133,7 +135,8 @@
                 android:id="@+id/password_error_text_view"
                 style="@style/ErrorTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/error_field_height"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/error_min_field_height"
                 tools:text="ошибка" />
 
         </LinearLayout>
@@ -157,8 +160,8 @@
                 android:id="@+id/confirm_password_error_text_view"
                 style="@style/ErrorTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/error_field_height"
-                android:includeFontPadding="false"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/error_min_field_height"
                 tools:text="ошибка" />
         </LinearLayout>
 
