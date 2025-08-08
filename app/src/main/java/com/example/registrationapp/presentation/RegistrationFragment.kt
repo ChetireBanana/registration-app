@@ -50,40 +50,40 @@ class RegistrationFragment() : Fragment() {
                             uiState.isUsernameValid == CheckValidUseCase.NOT_CHECKED) &&
                     uiState.isUsernameUnique
                 ) {
-                    binding.usernameLayoutEditText.error = null
+                    binding.usernameErrorTextView.text = null
                 } else if (!uiState.isUsernameUnique) {
-                    binding.usernameLayoutEditText.error =
+                    binding.usernameErrorTextView.text =
                         requireContext().getString(R.string.username_not_unique)
                 } else {
-                    binding.usernameLayoutEditText.error = uiState.isUsernameValid
+                    binding.usernameErrorTextView.text = uiState.isUsernameValid
                 }
 
                 if ((uiState.isEmailValid == CheckValidUseCase.OK ||
                             uiState.isEmailValid == CheckValidUseCase.NOT_CHECKED) &&
                     uiState.isEmailUnique
                 ) {
-                    binding.emailLayoutEditText.error = null
+                    binding.emailErrorTextView.text = null
                 } else if (!uiState.isEmailUnique) {
-                    binding.emailLayoutEditText.error =
+                    binding.emailErrorTextView.text  =
                         requireContext().getString(R.string.email_not_unique)
                 } else {
-                    binding.emailLayoutEditText.error = uiState.isEmailValid
+                    binding.emailErrorTextView.text  = uiState.isEmailValid
                 }
 
                 if ((uiState.isPasswordValid == CheckValidUseCase.OK ||
                             uiState.isPasswordValid == CheckValidUseCase.NOT_CHECKED)
                 ) {
-                    binding.passwordLayoutEditText.error = null
+                    binding.passwordErrorTextView.text = null
                 } else {
-                    binding.passwordLayoutEditText.error = uiState.isPasswordValid
+                    binding.passwordErrorTextView.text = uiState.isPasswordValid
 
                 }
 
                 if (!uiState.isConfirmPasswordValid) {
-                    binding.confirmPasswordLayoutEditText.error =
+                    binding.confirmPasswordErrorTextView.text =
                         getString(R.string.password_not_confirmed)
                 } else {
-                    binding.confirmPasswordLayoutEditText.error = null
+                    binding.confirmPasswordErrorTextView.text = null
                 }
 
                 if (uiState.isLoading) {
@@ -98,11 +98,11 @@ class RegistrationFragment() : Fragment() {
                     uiState.isPasswordValid == CheckValidUseCase.OK &&
                     uiState.isConfirmPasswordValid
                 ) {
-                    binding.creaeteAccauntButton.isEnabled = true
-                    binding.enterAccauntButton.isEnabled = true
+                    binding.createAccountButton.isEnabled = true
+                    binding.enterAccountButton.isEnabled = true
                 } else {
-                    binding.creaeteAccauntButton.isEnabled = false
-                    binding.enterAccauntButton.isEnabled = false
+                    binding.createAccountButton.isEnabled = false
+                    binding.enterAccountButton.isEnabled = false
                 }
             }
         }
@@ -138,7 +138,7 @@ class RegistrationFragment() : Fragment() {
     }
 
     private fun clickListeners() {
-        binding.creaeteAccauntButton.setOnClickListener {
+        binding.createAccountButton.setOnClickListener {
             val username = binding.usernameEditText.text.toString()
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
@@ -150,7 +150,7 @@ class RegistrationFragment() : Fragment() {
             )
         }
 
-        binding.enterAccauntButton.setOnClickListener {
+        binding.enterAccountButton.setOnClickListener {
             Toast.makeText(
                 requireContext(),
                 getString(R.string.enter_accaunt_button_clicked_toast), Toast.LENGTH_SHORT

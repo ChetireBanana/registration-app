@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/top_panel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:layout_height="@dimen/topbar_height"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -16,18 +18,16 @@
         <ImageView
             android:id="@+id/focus_logo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/topbar_height"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
             android:contentDescription="@string/focus_logo_description"
             android:src="@drawable/focus_logo" />
 
         <ImageView
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
             android:contentDescription="@string/back_button_description"
             android:src="@drawable/back_to_profile" />
     </RelativeLayout>
@@ -35,10 +35,10 @@
     <View
         android:id="@+id/border"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="@dimen/border_height"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +48,9 @@
         android:id="@+id/registration_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
         android:orientation="vertical"
-        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/border">
@@ -58,96 +59,135 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/geologica_font"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:fontFamily="@font/geologica"
             android:text="@string/registration_title"
             android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="@dimen/title_text_size" />
 
-        <com.google.android.material.textfield.TextInputLayout
+
+        <LinearLayout
             android:id="@+id/username_layout_edit_text"
-            style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="@dimen/standard_padding"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/username_edit_text"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/enter_username_hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="@dimen/text_input_height"
+                android:hint="@string/enter_username_hint"
+                android:inputType="text" />
 
-        <com.google.android.material.textfield.TextInputLayout
+            <TextView
+                android:id="@+id/username_error_text_view"
+                style="@style/ErrorTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/error_field_height"
+                tools:text="ошибка" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/email_layout_edit_text"
-            style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/email_edit_text"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/enter_email_hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="@dimen/text_input_height"
+                android:hint="@string/enter_email_hint"
+                android:inputType="textEmailAddress" />
 
-        <com.google.android.material.textfield.TextInputLayout
+            <TextView
+                android:id="@+id/email_error_text_view"
+                style="@style/ErrorTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/error_field_height"
+                tools:text="ошибка" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/password_layout_edit_text"
-            style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/password_edit_text"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/text_input_height"
                 android:hint="@string/enter_password_hint"
                 android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+            <TextView
+                android:id="@+id/password_error_text_view"
+                style="@style/ErrorTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/error_field_height"
+                tools:text="ошибка" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/confirm_password_layout_edit_text"
-            style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/confirm_password_edit_text"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/text_input_height"
                 android:hint="@string/confirm_password_hint"
-                android:inputType="textPassword"
-                android:textSize="14sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/confirm_password_error_text_view"
+                style="@style/ErrorTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/error_field_height"
+                android:includeFontPadding="false"
+                tools:text="ошибка" />
+        </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/medium_padding"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/enter_accaunt_button"
+                android:id="@+id/enter_account_button"
                 style="@style/ButtonOutlinedStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:enabled="false"
-                android:text="@string/enter_account_button" />
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                android:text="@string/enter_account_button"
+                app:iconPadding="0dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/creaete_accaunt_button"
+                android:id="@+id/create_account_button"
                 style="@style/ButtonFilledStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_weight="1"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/medium_padding"
                 android:enabled="false"
                 android:text="@string/create_account_button" />
         </LinearLayout>
